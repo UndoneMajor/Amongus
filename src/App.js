@@ -1,29 +1,41 @@
+import React,{useState,useEffect} from 'react';
 import './App.css';
+const App=()=>{
+    const [fake,setFake]=useState([]);
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
-    </div>
-  );
+    useEffect(()=>{
+        // ON LOAD
+        fakestore();
+    },[])
+    const fakestore=async()=>{
+        
+        console.log(fake);
+      
+        const response=await fetch("https://fakestoreapi.com/products");
+        const jsonData=await response.json();
+        setFake(jsonData);
+    }
+    return(
+        <>
+        <h2>Shop</h2>
+        <div className='container'>
+            {fake.map((values)=>{
+                return(
+                    <>
+                   <div className='box'>
+                <div className='content'>
+                    <h5>{values.title}</h5>
+                    <p>{values.description}</p>
+                </div>
+                <img src={values.image}></img>
+            </div> 
+            </>
+                )
+            })}
+            
+        </div>
+            
+        </>
+    )
 }
-
 export default App;
