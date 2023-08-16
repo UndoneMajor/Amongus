@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Amongus/static/css/main.45ddd8b6.css",
+    "main.js": "/Amongus/static/js/main.fbe9c30f.js",
+    "index.html": "/Amongus/index.html",
+    "main.45ddd8b6.css.map": "/Amongus/static/css/main.45ddd8b6.css.map",
+    "main.fbe9c30f.js.map": "/Amongus/static/js/main.fbe9c30f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.45ddd8b6.css",
+    "static/js/main.fbe9c30f.js"
+  ]
+}
